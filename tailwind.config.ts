@@ -8,6 +8,8 @@ const config: Config = {
   ],
   theme: {
     extend: {
+
+      
       container:{
         center: true,
         padding: "15px",

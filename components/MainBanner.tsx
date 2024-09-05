@@ -17,10 +17,11 @@ import { IoLocationOutline } from "react-icons/io5";
 import { FaBusinessTime } from "react-icons/fa6";
 import { MdOutlineMailOutline } from "react-icons/md";
 import Link from "next/link";
-import { workspace } from "../utils/mockdata";
+import { workspace} from "../utils/mockdata";
 import Cards from "./Cards";
 import VideoSection from "./VideoSection";
 import Services from "./Services";
+
 
 const MainBanner = () => {
   const images = [mainBanner1, mainBanner3, mainBanner2];
@@ -195,6 +196,7 @@ const MainBanner = () => {
                 heading={card.heading}
                 desc={card.desc}
               />
+              // <IconCards key={index} icon={card.icon} heading={card.heading} desc={card.desc} />
             ))}
           </Slider>
         </div>

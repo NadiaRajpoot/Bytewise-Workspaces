@@ -15,7 +15,7 @@ const ServiceCard: React.FC<CardProps> = ({ icon, heading, desc }) => {
     <div className="group border-[#d7c1d7] border relative mb-2 text-[#524552] rounded-lg hover:scale-105 hover:ease-out hover:bg-[#524552] transition-all duration-300 hover:text-white md:mx-0 mx-8">
       <div className="p-[30px] mb-[30px] text-center rounded-[5px] relative z-10 font-sans">
         <div className="text-center">
-          <div className=" text-4xl object-cover text-center ml-32">{icon}</div>
+          <div className=" text-4xl object-cover text-center ml-28">{icon}</div>
         </div>
 
         <h3 className="mb-[4px] text-[24px] pt-4 pb-[8px] font-semibold">

@@ -4,7 +4,18 @@ import React, { useState } from "react";
 import { RiArrowDropDownLine } from "react-icons/ri";
 
 const Navlinks = () => {
-  const [showSublinks, setShowSublink] = useState(false);
+
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+const handleSubMenuClick = (index: number) => {
+  // Toggle the sublink for the clicked item
+  if (activeIndex === index) {
+    setActiveIndex(null); // Close if already open
+  } else {
+    setActiveIndex(index); // Open the clicked item
+  }
+};
+
   const links = [
     {
       name: "HOME",
@@ -77,25 +88,29 @@ const Navlinks = () => {
         </div>
       ))}
     {/* -------------------mobile links--------------- */}
-      {links.map((item, index) => (
-        <div key={index} className="relative group md:hidden">
-          <h1 onClick={() => setShowSublink(!showSublinks)} className="flex justify-between items-center cursor-pointer group-hover:text-orange">
-           <Link href={item.link}> {item.name}</Link>
-            {item.subMenu && <RiArrowDropDownLine size={40} />}
-          </h1>
-          {item.subMenu && showSublinks && (
-            <div>
-              <div className="flex flex-col gap-4 p-4">
-                {item.subLink?.map((mysubLink, subIndex) => (
-                  <Link key={subIndex} href={mysubLink.link}>
-                    <h1 className="hover:text-orange">{mysubLink.name}</h1>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
+    {links.map((item, index) => (
+  <div key={index} className="relative group md:hidden">
+    <h1
+      onClick={() => handleSubMenuClick(index)}
+      className="flex justify-between mt-8 items-center cursor-pointer group-hover:text-orange"
+    >
+      <Link href={item.link}>{item.name}</Link>
+      {item.subMenu && <RiArrowDropDownLine size={40} />}
+    </h1>
+
+    {item.subMenu && activeIndex === index && (
+      <div>
+        <div className="flex flex-col gap-8 p-4">
+          {item.subLink?.map((mysubLink, subIndex) => (
+            <Link key={subIndex} href={mysubLink.link}>
+              <h1 className="hover:text-orange">{mysubLink.name}</h1>
+            </Link>
+          ))}
         </div>
-      ))}
+      </div>
+    )}
+  </div>
+))}
     </>
   );
 };

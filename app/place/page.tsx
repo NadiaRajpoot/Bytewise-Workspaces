@@ -30,11 +30,11 @@ const Place: React.FC = () => {
         src={"/main-banner4.jpg"}
           className="max-h-[450px] object-cover md:h-full"
           alt="place"
-          width={1000} 
+          width={5000} 
           height={450} 
           objectFit="cover"
         />
-        <div className="absolute top-0 left-0 w-full h-[195px] md:h-[450px] bg-[#1a0602] opacity-[.6] z-10"></div>
+        <div className="absolute top-0 left-0 w-full h-[190px] md:h-[450px] bg-[#1a0602] opacity-[.6] z-10"></div>
 
         <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center z-20 font-sans">
           <div className="text-center text-white">

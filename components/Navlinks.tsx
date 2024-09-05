@@ -8,12 +8,9 @@ const Navlinks = () => {
   const links = [
     {
       name: "HOME",
-      subMenu: true,
-      link: "/home",
-      subLink: [
-        { name: "Events", link: "/home/events" },
-        { name: "Events Details", link: "/home/events-details" },
-      ],
+      subMenu: false,
+      link: "/",
+    
     },
     {
       name: "EVENTS",
@@ -79,11 +76,11 @@ const Navlinks = () => {
           )}
         </div>
       ))}
-
+    {/* -------------------mobile links--------------- */}
       {links.map((item, index) => (
         <div key={index} className="relative group md:hidden">
           <h1 onClick={() => setShowSublink(!showSublinks)} className="flex justify-between items-center cursor-pointer group-hover:text-orange">
-            {item.name}
+           <Link href={item.link}> {item.name}</Link>
             {item.subMenu && <RiArrowDropDownLine size={40} />}
           </h1>
           {item.subMenu && showSublinks && (

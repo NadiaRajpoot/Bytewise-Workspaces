@@ -2,8 +2,7 @@ import gallery_image1 from "../assets/gallery1.jpg";
 import gallery_image2 from "../assets/gallery2.jpg";
 import gallery_image3 from "../assets/gallery3.jpg";
 import gallery_image4 from "../assets/gallery4.jpg";
-import { HiOutlineBuildingOffice } from "react-icons/hi2"
-
+import { HiOutlineBuildingOffice } from "react-icons/hi2";
 import { GiVideoConference } from "react-icons/gi";
 import { IoHome } from "react-icons/io5";
 import { PiOfficeChairBold } from "react-icons/pi";
